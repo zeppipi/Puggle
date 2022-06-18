@@ -43,18 +43,18 @@ public class PaddleFollow : MonoBehaviour
 
         if(mousePos.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || mousePos.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])
         {
-            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * (mousePos.x/Mathf.Abs(mousePos.x)) + constraintInstatiate.constraintsLocationGetter()[0], mousePos.y);
+            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((mousePos.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(mousePos.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], mousePos.y);
         }
         
         if(mousePos.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || mousePos.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])
         {
-            playerPaddle.transform.position = new Vector2(mousePos.x, constraintInstatiate.constraintsGetter()[1] * (mousePos.y/Mathf.Abs(mousePos.y)) + constraintInstatiate.constraintsLocationGetter()[1]);
+            playerPaddle.transform.position = new Vector2(mousePos.x, (constraintInstatiate.constraintsGetter()[1] * ((mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
         }
 
-        //if(Mathf.Abs(mousePos.x) > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] && Mathf.Abs(mousePos.y) > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])
-        //{
-          //  playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * (mousePos.x/Mathf.Abs(mousePos.x)) + constraintInstatiate.constraintsLocationGetter()[0], constraintInstatiate.constraintsGetter()[1] * (mousePos.y/Mathf.Abs(mousePos.y)) + constraintInstatiate.constraintsLocationGetter()[1]);
-        //}
+        if(((mousePos.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || mousePos.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])) && ((mousePos.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || mousePos.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])))
+        {
+            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((mousePos.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(mousePos.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], (constraintInstatiate.constraintsGetter()[1] * ((mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
+        }
     }
 
     //For encapusilation and also easy debugging
