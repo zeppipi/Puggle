@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PaddleFollow : MonoBehaviour
 {
+    //A instatiation of the constraints script
     private PositionConstraints constraintInstatiate;
     
+    //An instiation of the object itself
     private GameObject playerPaddle;
     private Transform paddleForm;
 
+    //Vectors for movement
     [SerializeField]
     private Vector2 mousePos;
     public float lerpSpeed = 1f;
 
+    //For sizing the object
     [SerializeField]
     private float x_size = 1f;
     [SerializeField]
@@ -34,26 +38,26 @@ public class PaddleFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
         playerPaddle.transform.position = Vector2.Lerp(playerPaddle.transform.position, mousePos, lerpSpeed);
 
-        if(mousePos.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || mousePos.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])
+        if(playerPaddle.transform.position.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || playerPaddle.transform.position.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])
         {
-            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((mousePos.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(mousePos.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], mousePos.y);
+            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], playerPaddle.transform.position.y);
         }
         
-        if(mousePos.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || mousePos.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])
+        if(playerPaddle.transform.position.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || playerPaddle.transform.position.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])
         {
-            playerPaddle.transform.position = new Vector2(mousePos.x, (constraintInstatiate.constraintsGetter()[1] * ((mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
+            playerPaddle.transform.position = new Vector2(playerPaddle.transform.position.x, (constraintInstatiate.constraintsGetter()[1] * ((playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
         }
 
-        if(((mousePos.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || mousePos.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])) && ((mousePos.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || mousePos.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])))
+        if(((playerPaddle.transform.position.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || playerPaddle.transform.position.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])) && ((playerPaddle.transform.position.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || playerPaddle.transform.position.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])))
         {
-            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((mousePos.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(mousePos.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], (constraintInstatiate.constraintsGetter()[1] * ((mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
+            playerPaddle.transform.position = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], (constraintInstatiate.constraintsGetter()[1] * ((playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
         }
     }
 

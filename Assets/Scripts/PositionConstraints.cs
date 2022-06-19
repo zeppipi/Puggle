@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PositionConstraints : MonoBehaviour
 {
+    //An instantiation of the paddle script
     private PaddleFollow paddleInstantiate;
     
+    //Variables to just keep track of the paddle size
     private float paddle_x_size;
     private float paddle_y_size;
 
