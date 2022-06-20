@@ -59,10 +59,4 @@ public class BallBehaviour : MonoBehaviour
             ballPhysics.velocity = ballPhysics.velocity.normalized * maxSpeed;
         }
     }
-
-    //For other scripts to play around with
-    private GameObject gameObjectGetter()
-    {
-        return ball;
-    }
 }

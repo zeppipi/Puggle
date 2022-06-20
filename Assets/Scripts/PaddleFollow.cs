@@ -12,15 +12,21 @@ public class PaddleFollow : MonoBehaviour
     private Transform paddleForm;
 
     //Vectors for movement
-    [SerializeField]
     private Vector2 mousePos;
-    public float lerpSpeed = 1f;
+    [SerializeField]
+    private float Speed = 1f;
 
     //For sizing the object
     [SerializeField]
     private float x_size = 1f;
     [SerializeField]
     private float y_size = 1f;
+
+    //Varibles to keep track of things
+    private float Top;
+    private float Below;
+    private float Right;
+    private float Left;
     
     // Initialize befor anything starts
     void Awake()
@@ -35,6 +41,11 @@ public class PaddleFollow : MonoBehaviour
     void Start() 
     {
         playerPaddle.transform.localScale = new Vector3(x_size, y_size, 1f);
+
+        Top = constraintInstatiate.constraintsLocationGetter()[1] + constraintInstatiate.constraintsGetter()[1];
+        Below = constraintInstatiate.constraintsLocationGetter()[1] - constraintInstatiate.constraintsGetter()[1];
+        Right = constraintInstatiate.constraintsLocationGetter()[0] + constraintInstatiate.constraintsGetter()[0];
+        Left = constraintInstatiate.constraintsLocationGetter()[0] - constraintInstatiate.constraintsGetter()[0];
     }
 
     // Update is called once per frame
@@ -43,21 +54,44 @@ public class PaddleFollow : MonoBehaviour
         mousePos = Input.mousePosition;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
-        playerPaddle.transform.position = Vector2.Lerp(playerPaddle.transform.position, mousePos, lerpSpeed);
+        Vector2 leftRightPos = new Vector2(constraintInstatiate.constraintsGetter()[0] * ((mousePos.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(mousePos.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], mousePos.y);
+        Vector2 upDownPos = new Vector2(mousePos.x, (constraintInstatiate.constraintsGetter()[1] * ((mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(mousePos.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]);
 
-        if(playerPaddle.transform.position.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || playerPaddle.transform.position.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])
+        if(mousePos.x >= Right || mousePos.x <= Left)
         {
-            playerPaddle.transform.position = Vector2.Lerp(playerPaddle.transform.position, new Vector2(constraintInstatiate.constraintsGetter()[0] * ((playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], playerPaddle.transform.position.y), lerpSpeed); 
+            if(mousePos.y >= Top || mousePos.y <= Below)
+            {
+                playerPaddle.transform.position = Vector2.MoveTowards(playerPaddle.transform.position, new Vector2(leftRightPos.x, upDownPos.y), Speed * Time.deltaTime);   
+            }
+            else
+            {
+                playerPaddle.transform.position = Vector2.MoveTowards(playerPaddle.transform.position, leftRightPos, Speed * Time.deltaTime);
+            }
+
         }
         
-        if(playerPaddle.transform.position.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || playerPaddle.transform.position.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])
+        else if(mousePos.y >= Top || mousePos.y <= Below)
         {
-            playerPaddle.transform.position = Vector2.Lerp(playerPaddle.transform.position, new Vector2(playerPaddle.transform.position.x, (constraintInstatiate.constraintsGetter()[1] * ((playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]), lerpSpeed);
+            if(mousePos.x >= Right || mousePos.x <= Left)
+            {
+                playerPaddle.transform.position = Vector2.MoveTowards(playerPaddle.transform.position, new Vector2(leftRightPos.x, upDownPos.y), Speed * Time.deltaTime); 
+            }
+            else
+            {
+                playerPaddle.transform.position = Vector2.MoveTowards(playerPaddle.transform.position, upDownPos, Speed * Time.deltaTime);
+            }
+            
         }
 
-        if(((playerPaddle.transform.position.x > constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0] || playerPaddle.transform.position.x < -constraintInstatiate.constraintsGetter()[0] + constraintInstatiate.constraintsLocationGetter()[0])) && ((playerPaddle.transform.position.y > constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1] || playerPaddle.transform.position.y < -constraintInstatiate.constraintsGetter()[1] + constraintInstatiate.constraintsLocationGetter()[1])))
+        else if((mousePos.x >= Right || mousePos.x <= Left) && (mousePos.y >= Top || mousePos.y <= Below))
         {
-            playerPaddle.transform.position = Vector2.Lerp(playerPaddle.transform.position, new Vector2(constraintInstatiate.constraintsGetter()[0] * ((playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0])/(Mathf.Abs(playerPaddle.transform.position.x-constraintInstatiate.constraintsLocationGetter()[0]))) + constraintInstatiate.constraintsLocationGetter()[0], (constraintInstatiate.constraintsGetter()[1] * ((playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])/(Mathf.Abs(playerPaddle.transform.position.y-constraintInstatiate.constraintsLocationGetter()[1])))) + constraintInstatiate.constraintsLocationGetter()[1]), lerpSpeed);
+            Debug.Log("both");
+            playerPaddle.transform.position = Vector2.MoveTowards(playerPaddle.transform.position, new Vector2(leftRightPos.x, upDownPos.y), Speed * Time.deltaTime);
+        }
+
+        else
+        {
+            playerPaddle.transform.position = Vector2.MoveTowards(playerPaddle.transform.position, mousePos, Speed * Time.deltaTime);
         }
     }
 
@@ -83,11 +117,11 @@ public class PaddleFollow : MonoBehaviour
         return mousePos;
     }
 
-    /**
-    Made so the different scripts are referencing the same gameObject
-    */
-    public GameObject gameObjectGetter()
-    {
-        return playerPaddle;
-    }
+    // /**
+    // Made so the different scripts are referencing the same gameObject
+    // */
+    // public GameObject gameObjectGetter()
+    // {
+    //     return playerPaddle;
+    // }
 }

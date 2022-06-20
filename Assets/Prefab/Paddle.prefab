@@ -148,9 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f744b44341ad00c4aac978dedf7533a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mousePos: {x: 0, y: 0}
-  lerpSpeed: 1
-  x_size: 3
+  Speed: 50
+  x_size: 2
   y_size: 0.3
 --- !u!114 &2705888264069454278
 MonoBehaviour:
@@ -180,6 +179,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f67cc4b66163b4882e726353a080ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddlePosition: {x: 0, y: 0}
-  paddleSpeed: {x: 0, y: 0}
   speedExaggeration: {x: 30, y: 20}

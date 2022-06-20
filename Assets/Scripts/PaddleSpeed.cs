@@ -6,11 +6,9 @@ public class PaddleSpeed : MonoBehaviour
 {
     private PaddleFollow paddleFollow;
 
-    [SerializeField]
     private Vector2 paddlePosition;
     private Vector2 lastPaddlePosition;
 
-    [SerializeField]
     private Vector2 paddleSpeed;
 
     [SerializeField]
@@ -36,7 +34,6 @@ public class PaddleSpeed : MonoBehaviour
         if(paddlePosition != lastPaddlePosition)
         {
             paddleSpeed = new Vector2((paddlePosition.x - lastPaddlePosition.x) * speedExaggeration.x, Mathf.Abs(paddlePosition.y - lastPaddlePosition.y) * speedExaggeration.y);
-            //paddleSpeed = Mathf.Abs(paddlePosition - lastPaddlePosition) * speedExaggeration;
         }
 
         lastPaddlePosition = paddlePosition;
