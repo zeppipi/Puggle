@@ -59,4 +59,10 @@ public class BallBehaviour : MonoBehaviour
             ballPhysics.velocity = ballPhysics.velocity.normalized * maxSpeed;
         }
     }
+
+    //Get the 'hit' status
+    public bool hitGetter()
+    {
+        return hit;
+    }
 }
