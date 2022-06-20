@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mousePos: {x: 0, y: 0}
   lerpSpeed: 1
-  x_size: 1.5
+  x_size: 3
   y_size: 0.3
 --- !u!114 &2705888264069454278
 MonoBehaviour:

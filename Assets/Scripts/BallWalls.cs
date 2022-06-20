@@ -4,30 +4,41 @@ using UnityEngine;
 
 public class BallWalls : MonoBehaviour
 {
-    //Instantiate the entity manager script and object
-    private GameObject informationObject;
-    private Information informationScript;
-
-    //The box colliders for the edges of the screen
+    //Set play area
     [SerializeField]
-    private BoxCollider2D leftWall;
-    [SerializeField]
-    private BoxCollider2D rightWall;
+    private float area;
 
-    private PositionConstraints playArea;
-    
-    // Start is called before the first frame update
+    private Rigidbody2D ballPhysics;
+    private bool flipped;
+
+    //Instantiate the rigidbody
     void Start()
     {
-        informationObject = GameObject.Find("EntitiesManager");
-        informationScript = informationObject.GetComponent<Information>();
+        ballPhysics = this.gameObject.GetComponent<Rigidbody2D>();
+    }
+    
+    //Screw box colliders fr
+    void Update() 
+    {
+        if(this.transform.position.x > area || this.transform.position.x < -area)
+        {   
+            if(flipped == false)
+            {
+                ballPhysics.velocity = new Vector2(-ballPhysics.velocity.x, ballPhysics.velocity.y);
+                flipped = true;
+            }
+        }
+        else
+        {
+            flipped = false;
+        }
 
-        playArea = informationScript.prefabListGetter(0).GetComponent<PositionConstraints>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //Show the playarea
+    void OnDrawGizmos()
     {
-        leftWall.offset = new Vector2(this.transform.position.x - playArea.constraintsGetter()[0], this.transform.position.y);
+        Gizmos.color = Color.white;
+        Gizmos.DrawLine(new Vector2(-area, 0f), new Vector2(area, 0f));
     }
 }
