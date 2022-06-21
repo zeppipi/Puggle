@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
+    [SerializeField]
     private int score = 0;
     private int temp = 0;
 
@@ -13,6 +14,7 @@ public class Score : MonoBehaviour
         if(temp != score)
         {
             temp = score;
+            Debug.Log(score);
         }
     }
 

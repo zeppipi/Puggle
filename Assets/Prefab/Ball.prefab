@@ -103,7 +103,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballSize: 0.5
   maxSpeed: 30
+  minSpeed: 1
 --- !u!114 &1035600759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +149,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a36f57a0e6bb4c857c0c3c9402817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreWeight: 1

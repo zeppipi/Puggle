@@ -16,6 +16,8 @@ public class BallBehaviour : MonoBehaviour
     private float ballSize = 1f;
     [SerializeField]
     private float maxSpeed = 30f;
+    [SerializeField]
+    private float minSpeed = 1f;
 
     //To make a more stable paddle bounce
     private bool hit;
@@ -37,13 +39,23 @@ public class BallBehaviour : MonoBehaviour
     //Screw rigid colliders
     void OnTriggerEnter2D(Collider2D other) 
     {
-        GameObject otherGameobject = other.gameObject;
+        if(other.tag == "Player")
+        {   
+            GameObject otherGameobject = other.gameObject;
         
-        if(hit == false)
-        {
-            ballPhysics.velocity = -ballPhysics.velocity + otherGameobject.GetComponent<PaddleSpeed>().getSpeed();
-            hit = true;
+            if(hit == false)
+            {
+                ballPhysics.velocity = -ballPhysics.velocity + otherGameobject.GetComponent<PaddleSpeed>().getSpeed();
+                hit = true;
+            }
+
+            if(ballPhysics.velocity.magnitude < minSpeed)
+            {
+                ballPhysics.velocity += ballPhysics.velocity.normalized * minSpeed;
+            }
+
         }
+
     }
 
     void OnTriggerExit2D(Collider2D other) 
@@ -53,7 +65,7 @@ public class BallBehaviour : MonoBehaviour
 
     //Obey Speed laws
     void Update()
-    {
+    {   
         if(ballPhysics.velocity.magnitude > maxSpeed)
         {
             ballPhysics.velocity = ballPhysics.velocity.normalized * maxSpeed;
