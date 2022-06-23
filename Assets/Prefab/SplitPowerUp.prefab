@@ -98,4 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSize: 1
-  delay: 0.1
+  delay: 0.3
