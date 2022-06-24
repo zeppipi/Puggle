@@ -21,6 +21,7 @@ public class BallBehaviour : MonoBehaviour
 
     //To make a more stable paddle bounce
     private bool hit;
+    private bool down;
     
     //Instiate before anything starts
     void Awake()
@@ -43,9 +44,15 @@ public class BallBehaviour : MonoBehaviour
         {   
             GameObject otherGameobject = other.gameObject;
         
-            if(hit == false)
+            if(down == true)
             {
-                ballPhysics.velocity = -ballPhysics.velocity + otherGameobject.GetComponent<PaddleSpeed>().getSpeed();
+                Vector2 calcResult = -ballPhysics.velocity + otherGameobject.GetComponent<PaddleSpeed>().getSpeed();
+                
+                if(calcResult.y > 0)
+                {
+                    ballPhysics.velocity = calcResult;
+                }
+
                 hit = true;
             }
 
@@ -66,6 +73,15 @@ public class BallBehaviour : MonoBehaviour
     //Obey Speed laws
     void Update()
     {   
+        if(ballPhysics.velocity.y <= 0)
+        {
+            down = true;
+        }
+        else
+        {
+            down = false;
+        }
+
         if(ballPhysics.velocity.magnitude > maxSpeed)
         {
             ballPhysics.velocity = ballPhysics.velocity.normalized * maxSpeed;
