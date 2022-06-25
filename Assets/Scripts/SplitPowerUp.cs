@@ -9,7 +9,7 @@ public class SplitPowerUp : PowerUpBase
 
     private GameObject other;
     
-    public virtual void playPowerUp()
+    public override void playPowerUp()
     {
         GameObject clone = Instantiate(other, transform.position, Quaternion.identity);
         clone.GetComponent<Rigidbody2D>().velocity = other.GetComponent<Rigidbody2D>().velocity;
@@ -22,7 +22,7 @@ public class SplitPowerUp : PowerUpBase
         Destroy(this.gameObject);
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D other) 
+    public override void OnTriggerEnter2D(Collider2D other) 
     {
         this.other = other.gameObject;
         StartCoroutine(CountDown(delay));

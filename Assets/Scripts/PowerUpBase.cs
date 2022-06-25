@@ -10,7 +10,7 @@ public abstract class PowerUpBase : MonoBehaviour
     private float powerUpSize = 1f;
 
     // Start is called before the first frame update
-    void Start()
+    public virtual void Start()
     {
         powerUpHitbox = this.gameObject.AddComponent<CircleCollider2D>();
         powerUpHitbox.isTrigger = true;
@@ -18,7 +18,7 @@ public abstract class PowerUpBase : MonoBehaviour
     }
 
     //Detect of a gameobject has entered this trigger
-    private void OnTriggerEnter2D(Collider2D other) 
+    public virtual void OnTriggerEnter2D(Collider2D other) 
     {
         playPowerUp();
         Destroy(this.gameObject);
@@ -29,6 +29,6 @@ public abstract class PowerUpBase : MonoBehaviour
         this.powerUpSize = size;
     }
 
-    private void playPowerUp(){}
+    public virtual void playPowerUp(){}
 
 }
