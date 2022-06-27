@@ -163,5 +163,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750f02e596dad4b4baec9fb3b78fb8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHeight: 0
+  maxHeight: 5
   pointer: {fileID: 3975921446648908941, guid: 0c6089c8f3ef1934b937da44f2770720, type: 3}
