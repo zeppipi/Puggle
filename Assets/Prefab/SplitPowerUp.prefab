@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aa04a5eff43b954e9e8099acd5465e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpSize: 1
+  powerUpSize: 1.5
   delay: 0.3
