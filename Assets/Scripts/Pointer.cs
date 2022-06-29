@@ -35,6 +35,12 @@ public class Pointer : MonoBehaviour
         }
     }
 
+    //Getter for the pointer gameobject
+    public GameObject pointerGetter()
+    {
+        return pointer;
+    }
+
     //Gizmos for debugging purposes
     void OnDrawGizmos()
     {

@@ -23,7 +23,6 @@ public class SpecialPowerUpSpawnner : MonoBehaviour
     //Temporary variable
     private int lastScore;
     private GameObject currentSpecialPowerUp;
-    [SerializeField]
     private GameObject[] ballsScene;
 
     //Start is called before the first frame update
@@ -51,6 +50,7 @@ public class SpecialPowerUpSpawnner : MonoBehaviour
     {
         if(currentSpecialPowerUp == null)
         {
+            Debug.Log("new spawn");
             currentSpecialPowerUp = Instantiate(specialPowerUp, this.transform.position, Quaternion.identity);
             scoreNeeded = scoreNeeded * ballsScene.Length;
         }

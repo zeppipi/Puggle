@@ -24,7 +24,10 @@ public class BigBallPowerUp : PowerUpBase
     {
         for(int index = 0; index < balls.Length; index++)
         {
-            balls[index].transform.localScale = balls[index].transform.localScale + new Vector3(extraSize, extraSize, 0f);
+            if(balls[index] != null)
+            {
+                balls[index].transform.localScale = balls[index].transform.localScale + new Vector3(extraSize, extraSize, 0f);
+            }
         }
         StartCoroutine(CountDown(time));
     }
@@ -39,7 +42,10 @@ public class BigBallPowerUp : PowerUpBase
     {
         for(int index = 0; index < balls.Length; index++)
         {
-            balls[index].transform.localScale = balls[index].transform.localScale - new Vector3(extraSize, extraSize, 0f);
+            if(balls[index] != null)
+            {
+                balls[index].transform.localScale = balls[index].transform.localScale - new Vector3(extraSize, extraSize, 0f);
+            }
         }
         Destroy(this.gameObject);
     }

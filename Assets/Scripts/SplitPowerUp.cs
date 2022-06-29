@@ -13,6 +13,7 @@ public class SplitPowerUp : PowerUpBase
     {
         GameObject clone = Instantiate(other, transform.position, Quaternion.identity);
         clone.GetComponent<Rigidbody2D>().velocity = other.GetComponent<Rigidbody2D>().velocity;
+        other = null;
     }
 
     IEnumerator CountDown(float delay)
@@ -25,6 +26,8 @@ public class SplitPowerUp : PowerUpBase
     public override void OnTriggerEnter2D(Collider2D other) 
     {
         this.other = other.gameObject;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        this.GetComponent<CircleCollider2D>().enabled = false;
         StartCoroutine(CountDown(delay));
     }
 }
