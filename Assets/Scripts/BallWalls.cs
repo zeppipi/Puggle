@@ -25,6 +25,16 @@ public class BallWalls : MonoBehaviour
             if(flipped == false)
             {
                 ballPhysics.velocity = new Vector2(-ballPhysics.velocity.x, ballPhysics.velocity.y);
+
+                if(this.transform.position.x > area)
+                {
+                    this.transform.position = new Vector2(area, this.transform.position.y);
+                }
+                else if(this.transform.position.x < -area)
+                {
+                    this.transform.position = new Vector2(-area, this.transform.position.y);
+                }
+
                 flipped = true;
             }
         }
