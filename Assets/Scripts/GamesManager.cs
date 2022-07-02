@@ -87,4 +87,16 @@ public class GamesManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    //Sets out the info of how many lives the player has
+    public void liveSetter(int number)
+    {
+        lives = number;
+    }
+
+    //Gives out the info of how many lives the player has
+    public int liveGetter()
+    {
+        return lives;
+    }
 }

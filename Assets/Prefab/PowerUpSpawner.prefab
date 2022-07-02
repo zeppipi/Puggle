@@ -51,5 +51,6 @@ MonoBehaviour:
   powerUps:
   - {fileID: 1534701913725003098, guid: 69747c29fcf48414cb6b78cd699a1a7d, type: 3}
   - {fileID: 5791081299736510868, guid: 5952f3abddc68c74384a59a8beed00a2, type: 3}
+  - {fileID: 6224420117349671734, guid: 483acb575a36b8a4a8fa50423bb02af1, type: 3}
   scoreNeeded: 5
   chance: 0.1
