@@ -46,4 +46,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   specialPowerUp: {fileID: 525045625001852984, guid: e9eaf97908107614ebc7ab177fa0cf53, type: 3}
   scoreNeeded: 50
-  ballsScene: []

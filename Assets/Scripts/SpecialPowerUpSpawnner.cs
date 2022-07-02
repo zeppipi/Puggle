@@ -52,7 +52,7 @@ public class SpecialPowerUpSpawnner : MonoBehaviour
         {
             Debug.Log("new spawn");
             currentSpecialPowerUp = Instantiate(specialPowerUp, this.transform.position, Quaternion.identity);
-            scoreNeeded = scoreNeeded * ballsScene.Length;
+            //scoreNeeded = scoreNeeded * ballsScene.Length;    //line was made to make the chaos less quick, but its not really fun
         }
     }
 }
