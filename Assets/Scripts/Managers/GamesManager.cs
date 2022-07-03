@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GamesManager : MonoBehaviour
 {
@@ -20,9 +21,21 @@ public class GamesManager : MonoBehaviour
     private int currentBalls;
     private int lastUpdateBalls;
 
+    //Display Game Over text and lives
+    [SerializeField]
+    private TextMeshProUGUI gameOver;
+    [SerializeField]
+    private GameObject gameOverPanel;
+    [SerializeField]
+    private TextMeshProUGUI livesText;
+
     //Start is called before the first frame update
     void Start()
     {
+        //Hide game over text
+        gameOver.enabled = false;
+        gameOverPanel.SetActive(false);
+        
         //Start the last update
         lastUpdateBalls = 0;
         
@@ -77,9 +90,12 @@ public class GamesManager : MonoBehaviour
         {
             if(ballsScene[index] != null)
             {
+                Destroy(ballsScene[index].GetComponent<Pointer>().pointerGetter());
                 Destroy(ballsScene[index]);
             }
         }
+        gameOver.enabled = true;
+        gameOverPanel.SetActive(true);
     }
     
     //Script to reset the scene
