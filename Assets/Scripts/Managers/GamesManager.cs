@@ -29,9 +29,15 @@ public class GamesManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI livesText;
 
+    //Bool to show if the game has ended or now
+    private bool gamePlaying;
+
     //Start is called before the first frame update
     void Start()
     {
+        //Annouce the game is playing
+        gamePlaying = true;
+        
         //Hide game over text
         gameOver.enabled = false;
         gameOverPanel.SetActive(false);
@@ -83,9 +89,13 @@ public class GamesManager : MonoBehaviour
         }
     }
 
-    //Script deletes all balls in the scene
+    //Script plays all the nessecary things for a game over
     void endPlay()
     {
+        //turn the game palying status to false
+        gamePlaying = false;
+        
+        //Deletes all balls in the scene
         for(int index = 0; index < currentBalls; index++)
         {
             if(ballsScene[index] != null)
@@ -94,6 +104,7 @@ public class GamesManager : MonoBehaviour
                 Destroy(ballsScene[index]);
             }
         }
+        //Show gameover
         gameOver.enabled = true;
         gameOverPanel.SetActive(true);
     }
@@ -114,5 +125,11 @@ public class GamesManager : MonoBehaviour
     public int liveGetter()
     {
         return lives;
+    }
+
+    //Gives out the info if the game is playing
+    public bool gamePlayingGetter()
+    {
+        return gamePlaying;
     }
 }

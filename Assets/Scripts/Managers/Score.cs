@@ -12,7 +12,24 @@ public class Score : MonoBehaviour
     //Score text
     [SerializeField]
     private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private Color scoreTextColor;
+    [SerializeField]
+    private Color scoreTextColorGameOver;
 
+    //Get the GamesManager info
+    private GameObject GamesManagerGameObject;
+    private GamesManager GamesManagerScript;
+
+    // Initialize the first frame
+    void Start()
+    {
+        //Attach the GamesManager info
+        GamesManagerGameObject = GameObject.Find("GamesManager");
+        GamesManagerScript = GamesManagerGameObject.GetComponent<GamesManager>();
+
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -21,6 +38,17 @@ public class Score : MonoBehaviour
             temp = score;
             Debug.Log(score);
             scoreText.text = score + "";
+        }
+
+        //Game has ended, change score text color
+        if(GamesManagerScript.gamePlayingGetter() == false)
+        {
+            scoreText.color = scoreTextColorGameOver;
+        }
+        //Game hasn't ended, keep the score text color
+        else
+        {
+            scoreText.color = scoreTextColor;
         }
     }
 
