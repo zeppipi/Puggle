@@ -57,6 +57,9 @@ public class GamesManager : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        //Display the lives count
+        livesText.text = lives + "x";
+        
         //Get info on the amount of balls currently
         ballsScene = GameObject.FindGameObjectsWithTag("Ball");
         currentBalls = ballsScene.Length;
@@ -107,6 +110,9 @@ public class GamesManager : MonoBehaviour
         //Show gameover
         gameOver.enabled = true;
         gameOverPanel.SetActive(true);
+
+        //Make lives show 0
+        lives = 0;
     }
     
     //Script to reset the scene

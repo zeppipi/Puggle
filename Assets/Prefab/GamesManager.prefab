@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 5
+  gameOver: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  livesText: {fileID: 0}
