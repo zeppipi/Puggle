@@ -48,3 +48,5 @@ MonoBehaviour:
   gameOver: {fileID: 0}
   gameOverPanel: {fileID: 0}
   livesText: {fileID: 0}
+  restartButton: {fileID: 0}
+  mainMenuButton: {fileID: 0}

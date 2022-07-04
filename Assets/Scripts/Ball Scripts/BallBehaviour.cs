@@ -33,7 +33,7 @@ public class BallBehaviour : MonoBehaviour
         ball.transform.localScale = new Vector3(ballSize, ballSize, 1f);
 
         //Instantiate the needed variables
-        ballHitbox = ball.AddComponent<CircleCollider2D>();
+        ballHitbox = ball.GetComponent<CircleCollider2D>();
         ballPhysics = ball.GetComponent<Rigidbody2D>();
     }
 

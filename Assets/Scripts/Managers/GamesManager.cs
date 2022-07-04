@@ -21,13 +21,17 @@ public class GamesManager : MonoBehaviour
     private int currentBalls;
     private int lastUpdateBalls;
 
-    //Display Game Over text and lives
+    //Display Game Over text, lives, and game over buttons
     [SerializeField]
     private TextMeshProUGUI gameOver;
     [SerializeField]
     private GameObject gameOverPanel;
     [SerializeField]
     private TextMeshProUGUI livesText;
+    [SerializeField]
+    private GameObject restartButton;
+    [SerializeField]
+    private GameObject mainMenuButton;
 
     //Bool to show if the game has ended or now
     private bool gamePlaying;
@@ -38,9 +42,11 @@ public class GamesManager : MonoBehaviour
         //Annouce the game is playing
         gamePlaying = true;
         
-        //Hide game over text
+        //Hide game over text and game over buttons
         gameOver.enabled = false;
         gameOverPanel.SetActive(false);
+        restartButton.SetActive(false);
+        mainMenuButton.SetActive(false);
         
         //Start the last update
         lastUpdateBalls = 0;
@@ -110,13 +116,15 @@ public class GamesManager : MonoBehaviour
         //Show gameover
         gameOver.enabled = true;
         gameOverPanel.SetActive(true);
+        restartButton.SetActive(true);
+        mainMenuButton.SetActive(true);
 
         //Make lives show 0
         lives = 0;
     }
     
     //Script to reset the scene
-    void resetLevel()
+    public void resetLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
