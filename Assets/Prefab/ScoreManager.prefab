@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
-  scoreTextColor: {r: 0.043431822, g: 0.1509434, b: 0.08791937, a: 0}
-  scoreTextColorGameOver: {r: 1, g: 1, b: 1, a: 0}
+  scoreTextColor: {r: 0.12224101, g: 0.38679248, b: 0.2345848, a: 1}
+  scoreTextColorGameOver: {r: 1, g: 1, b: 1, a: 1}

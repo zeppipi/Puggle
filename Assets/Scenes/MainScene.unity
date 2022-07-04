@@ -1648,7 +1648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2413806693520163455, guid: 215b3382168b0c74ea8b2377387082dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a308ea743b7e414cbf739f54e7b15d6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1753,26 +1753,6 @@ PrefabInstance:
       propertyPath: scoreText
       value: 
       objectReference: {fileID: 1377158436}
-    - target: {fileID: 974077165, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
-      propertyPath: scoreTextColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 974077165, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
-      propertyPath: scoreTextColor.b
-      value: 0.2345848
-      objectReference: {fileID: 0}
-    - target: {fileID: 974077165, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
-      propertyPath: scoreTextColor.g
-      value: 0.38679248
-      objectReference: {fileID: 0}
-    - target: {fileID: 974077165, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
-      propertyPath: scoreTextColor.r
-      value: 0.12224101
-      objectReference: {fileID: 0}
-    - target: {fileID: 974077165, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
-      propertyPath: scoreTextColorGameOver.a
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3749204930411740905, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
       propertyPath: m_RootOrder
       value: 5
