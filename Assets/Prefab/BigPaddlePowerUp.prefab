@@ -100,3 +100,5 @@ MonoBehaviour:
   powerUpSize: 1
   extraSize: 1
   time: 3
+  powerUpColor: {r: 0.9672187, g: 1, b: 0.6745283, a: 1}
+  originalGameObject: {fileID: 2705888264069454282, guid: 7c077ccd4f240e646836f2884caed19e, type: 3}

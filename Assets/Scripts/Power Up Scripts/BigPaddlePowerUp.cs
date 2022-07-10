@@ -15,16 +15,25 @@ public class BigPaddlePowerUp : PowerUpBase
     [SerializeField]
     private float time;
 
+    //For the color effect
+    [SerializeField]
+    private Color powerUpColor;
+    [SerializeField]
+    private GameObject originalGameObject;
+    private Color oriColor;
+
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         paddle = GameObject.FindGameObjectWithTag("Player");
+        oriColor = originalGameObject.GetComponent<SpriteRenderer>().color;
     }
 
     public override void playPowerUp()
     {
         paddle.transform.localScale = paddle.transform.localScale + new Vector3(extraSize, 0f, 0f);
+        paddle.GetComponent<SpriteRenderer>().color = powerUpColor;
         StartCoroutine(CountDown(time));
     }
 
@@ -37,6 +46,7 @@ public class BigPaddlePowerUp : PowerUpBase
     private void powerUpReturn()
     {
         paddle.transform.localScale = paddle.transform.localScale - new Vector3(extraSize, 0f, 0f);
+        paddle.GetComponent<SpriteRenderer>().color = oriColor;
         Destroy(this.gameObject);
     }
 

@@ -98,5 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSize: 1
-  extraSize: 0.25
+  extraSize: 0.5
   time: 5
+  powerUpColor: {r: 1, g: 0.6600191, b: 0.6556604, a: 1}
+  originalGameObject: {fileID: 4138937774206683209, guid: 2307cc855e01948438d7e94eb1ed3442, type: 3}
+  oriColor: {r: 0, g: 0, b: 0, a: 0}

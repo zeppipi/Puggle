@@ -15,10 +15,7 @@ public class SlomoPowerUp : PowerUpBase
     //Play the powerup
     public override void playPowerUp()
     {
-        if(Time.timeScale == 1.0f)
-        {
-            Time.timeScale = timeSpeed;
-        }
+        Time.timeScale = timeSpeed;
         StartCoroutine(CountDown(time));
     }
 

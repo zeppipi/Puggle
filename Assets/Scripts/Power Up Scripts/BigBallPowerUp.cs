@@ -12,12 +12,20 @@ public class BigBallPowerUp : PowerUpBase
     private float extraSize;
     [SerializeField]
     private float time;
+    [SerializeField]
+    private Color powerUpColor;
+    
+    //For the color effect
+    [SerializeField]
+    private GameObject originalGameObject;
+    private Color oriColor;
 
     // Start is called before the first frame update
     public override void Start()
     {
         base.Start();
         balls = GameObject.FindGameObjectsWithTag("Ball");
+        oriColor = originalGameObject.GetComponent<SpriteRenderer>().color;
     }
 
     public override void playPowerUp()
@@ -27,6 +35,7 @@ public class BigBallPowerUp : PowerUpBase
             if(balls[index] != null)
             {
                 balls[index].transform.localScale = balls[index].transform.localScale + new Vector3(extraSize, extraSize, 0f);
+                balls[index].GetComponent<SpriteRenderer>().color = powerUpColor;
             }
         }
         StartCoroutine(CountDown(time));
@@ -45,6 +54,7 @@ public class BigBallPowerUp : PowerUpBase
             if(balls[index] != null)
             {
                 balls[index].transform.localScale = balls[index].transform.localScale - new Vector3(extraSize, extraSize, 0f);
+                balls[index].GetComponent<SpriteRenderer>().color = oriColor;
             }
         }
         Destroy(this.gameObject);

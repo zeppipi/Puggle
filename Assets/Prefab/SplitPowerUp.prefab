@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpSize: 1.5
   delay: 0.3
+  original: {fileID: 4138937774206683209, guid: 2307cc855e01948438d7e94eb1ed3442, type: 3}
