@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6416945633440830591}
   - component: {fileID: 6416945633440830588}
   - component: {fileID: 6416945633440830589}
+  - component: {fileID: 5783542064464437557}
   m_Layer: 0
   m_Name: SlomoPowerUp
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2a906fa9ec7e0174c8da094c45244918, type: 3}
   m_Color: {r: 0.5388169, g: 0.2028302, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,3 +101,18 @@ MonoBehaviour:
   powerUpSize: 1
   timeSpeed: 0.5
   time: 3
+--- !u!114 &5783542064464437557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6416945633440830586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0213aefa4497a419e8ae09c3eae73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  xPosition: 0.3
+  yPosition: -0.4

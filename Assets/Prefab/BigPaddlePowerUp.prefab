@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1534701913725003047}
   - component: {fileID: 1534701913725003044}
   - component: {fileID: 1534701913725003045}
+  - component: {fileID: -1941017153532054606}
   m_Layer: 0
   m_Name: BigPaddlePowerUp
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1d02597b697cdf4e9762d45c352fd30, type: 3}
   m_Color: {r: 0.9433829, g: 1, b: 0.4292453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,3 +103,18 @@ MonoBehaviour:
   time: 3
   powerUpColor: {r: 0.9672187, g: 1, b: 0.6745283, a: 1}
   originalGameObject: {fileID: 2705888264069454282, guid: 7c077ccd4f240e646836f2884caed19e, type: 3}
+--- !u!114 &-1941017153532054606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534701913725003098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0213aefa4497a419e8ae09c3eae73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  xPosition: 0.3
+  yPosition: -0.4

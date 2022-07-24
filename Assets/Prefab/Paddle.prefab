@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2705888264069454278}
   - component: {fileID: 139606524}
   - component: {fileID: -6776514149650618285}
+  - component: {fileID: 1912532776}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Player
@@ -168,6 +169,7 @@ MonoBehaviour:
   yConstraint: 3
   xLocation: 0
   yLocation: -3.5
+  constraintLine: {fileID: 6936781030001627323, guid: cafd73acf205f2d4f86a2f533d613f86, type: 3}
 --- !u!114 &139606524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,3 +209,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1912532776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705888264069454282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0213aefa4497a419e8ae09c3eae73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  xPosition: 0.3
+  yPosition: -0.4

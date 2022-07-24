@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3482796242121689012}
   - component: {fileID: 2173324751260796472}
   - component: {fileID: 3403930480589571528}
+  - component: {fileID: -6629881119008236653}
   m_Layer: 0
   m_Name: ExtraLifePowerUp
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 66ebcde8c1b0bb74285b9e975dc6e230, type: 3}
   m_Color: {r: 0.2028302, g: 0.2416321, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,3 +100,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpSize: 1
   extraLives: 1
+--- !u!114 &-6629881119008236653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6224420117349671734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0213aefa4497a419e8ae09c3eae73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  xPosition: 0.3
+  yPosition: -0.4

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 525045625001852987}
   - component: {fileID: 525045625001852986}
   - component: {fileID: 9010441122787118345}
+  - component: {fileID: 2175586565515740554}
   m_Layer: 0
   m_Name: SplitPowerUp
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb739bbf8d6f160438bd072ec7e23d8c, type: 3}
   m_Color: {r: 0.4669811, g: 1, b: 0.50623244, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,3 +101,18 @@ MonoBehaviour:
   powerUpSize: 1.5
   delay: 0.3
   original: {fileID: 4138937774206683209, guid: 2307cc855e01948438d7e94eb1ed3442, type: 3}
+--- !u!114 &2175586565515740554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525045625001852984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0213aefa4497a419e8ae09c3eae73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadowColor: {r: 0, g: 0, b: 0, a: 0.47058824}
+  xPosition: 0.3
+  yPosition: -0.4

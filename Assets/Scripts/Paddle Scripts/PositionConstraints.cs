@@ -23,6 +23,10 @@ public class PositionConstraints : MonoBehaviour
     [SerializeField]
     private float yLocation = 0f;
 
+    //Game object that is the line that shows where the play area ends
+    [SerializeField]
+    private GameObject constraintLine;
+
     private float xConstraint_res = 0f;
     private float yConstraint_res = 0f;
 
@@ -32,6 +36,7 @@ public class PositionConstraints : MonoBehaviour
         paddleInstantiate = this.GetComponent<PaddleFollow>();
         paddle_x_size = paddleInstantiate.sizeGetter()[0];
         paddle_y_size = paddleInstantiate.sizeGetter()[1];
+
     }
     
     //Render Gizmos
@@ -46,6 +51,9 @@ public class PositionConstraints : MonoBehaviour
     {
         xConstraint_res = xConstraint / 2 - paddle_x_size/2;
         yConstraint_res = yConstraint / 2 - paddle_y_size/2;
+
+        //Spawn the line
+        Instantiate(constraintLine, new Vector3(0f, yConstraint_res + yLocation, 0f), Quaternion.identity);
     }
 
     /**
