@@ -135,6 +135,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1035600759, guid: 2307cc855e01948438d7e94eb1ed3442, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4138937774206683209, guid: 2307cc855e01948438d7e94eb1ed3442, type: 3}
       propertyPath: m_Name
       value: Ball
@@ -633,9 +637,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Game Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5776803626043175105, guid: d865bce68b27f284b8228025e57971a9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 5776803626043175106, guid: d865bce68b27f284b8228025e57971a9, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5776803626043175109, guid: d865bce68b27f284b8228025e57971a9, type: 3}
       propertyPath: m_Pivot.x
@@ -720,10 +724,6 @@ PrefabInstance:
     - target: {fileID: 5776803626043175109, guid: d865bce68b27f284b8228025e57971a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776803627514106782, guid: d865bce68b27f284b8228025e57971a9, type: 3}
-      propertyPath: m_Transition
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5776803627514106782, guid: d865bce68b27f284b8228025e57971a9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

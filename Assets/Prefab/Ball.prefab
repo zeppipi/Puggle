@@ -144,6 +144,7 @@ MonoBehaviour:
   ballSize: 0.5
   maxSpeed: 20
   minSpeed: 1
+  Particles: {fileID: 8405130222742431656, guid: cfbbf16ec0de715418e44cd0aa6b924d, type: 3}
 --- !u!114 &1035600759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   area: 3.75
+  particles: {fileID: 8405130222742431656, guid: cfbbf16ec0de715418e44cd0aa6b924d, type: 3}
 --- !u!114 &3136094705804713065
 MonoBehaviour:
   m_ObjectHideFlags: 0

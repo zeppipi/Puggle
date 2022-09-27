@@ -18,6 +18,8 @@ public class BallBehaviour : MonoBehaviour
     private float maxSpeed = 30f;
     [SerializeField]
     private float minSpeed = 1f;
+    [SerializeField]
+    private GameObject Particles;
 
     //To make a more stable paddle bounce
     private bool hit;
@@ -37,9 +39,17 @@ public class BallBehaviour : MonoBehaviour
         ballPhysics = ball.GetComponent<Rigidbody2D>();
     }
 
+    //Play particles on rigidbodties too
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+        playParticles();
+    }
+    
     //Screw rigid colliders
     void OnTriggerEnter2D(Collider2D other) 
     {
+        playParticles();
+        
         if(other.tag == "Player")
         {   
             GameObject otherGameobject = other.gameObject;
@@ -92,5 +102,11 @@ public class BallBehaviour : MonoBehaviour
     public bool hitGetter()
     {
         return hit;
+    }
+
+    //Play particles
+    void playParticles()
+    {
+        Instantiate(Particles, ball.transform.position, Quaternion.identity);
     }
 }

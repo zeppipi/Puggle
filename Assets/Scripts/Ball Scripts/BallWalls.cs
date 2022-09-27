@@ -8,6 +8,10 @@ public class BallWalls : MonoBehaviour
     [SerializeField]
     private float area;
 
+    //Give the particle effects
+    [SerializeField]
+    private GameObject particles;
+
     private Rigidbody2D ballPhysics;
     private bool flipped;
 
@@ -25,6 +29,7 @@ public class BallWalls : MonoBehaviour
             if(flipped == false)
             {
                 ballPhysics.velocity = new Vector2(-ballPhysics.velocity.x, ballPhysics.velocity.y);
+                Instantiate(particles, this.transform.position, Quaternion.identity);
 
                 if(this.transform.position.x > area)
                 {
