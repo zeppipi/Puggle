@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSize: 1
+  velocityDampen: 0.8
   extraSize: 0.5
   time: 5
   powerUpColor: {r: 1, g: 0.6600191, b: 0.6556604, a: 1}

@@ -8,6 +8,9 @@ public abstract class PowerUpBase : MonoBehaviour
     private CircleCollider2D powerUpHitbox;
     [SerializeField]
     private float powerUpSize = 1f;
+    [SerializeField]
+    //Dampens the speed of the ball when it hits the powerup
+    private float velocityDampen = 1f;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -20,8 +23,8 @@ public abstract class PowerUpBase : MonoBehaviour
     //Detect of a gameobject has entered this trigger
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {
+        other.GetComponent<Rigidbody2D>().velocity =  other.GetComponent<Rigidbody2D>().velocity * velocityDampen;
         playPowerUp();
-        Destroy(this.gameObject);
     }
 
     public void sizeSetter(int size)

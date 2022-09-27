@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSize: 1
+  velocityDampen: 0.8
   extraLives: 1
 --- !u!114 &-6629881119008236653
 MonoBehaviour:

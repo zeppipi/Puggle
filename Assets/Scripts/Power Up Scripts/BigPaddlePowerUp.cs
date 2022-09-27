@@ -54,6 +54,7 @@ public class BigPaddlePowerUp : PowerUpBase
     {
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<CircleCollider2D>().enabled = false;
+        base.OnTriggerEnter2D(other);
         playPowerUp();
     }
 

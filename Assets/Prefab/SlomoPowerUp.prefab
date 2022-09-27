@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpSize: 1
+  velocityDampen: 0.8
   timeSpeed: 0.5
   time: 3
 --- !u!114 &5783542064464437557

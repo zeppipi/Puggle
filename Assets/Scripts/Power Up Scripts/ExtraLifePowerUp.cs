@@ -25,5 +25,6 @@ public class ExtraLifePowerUp : PowerUpBase
     {
         int res = GamesManagerScript.liveGetter() + 1;
         GamesManagerScript.liveSetter(res);
+        Destroy(this.gameObject);
     }
 }
