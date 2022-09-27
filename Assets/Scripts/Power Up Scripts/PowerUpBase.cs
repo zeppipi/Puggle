@@ -11,6 +11,9 @@ public abstract class PowerUpBase : MonoBehaviour
     [SerializeField]
     //Dampens the speed of the ball when it hits the powerup
     private float velocityDampen = 1f;
+    [SerializeField]
+    //The effect that should come out when the powerup is hit, in a form of a gameobject
+    private GameObject effectGameobject;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -24,6 +27,13 @@ public abstract class PowerUpBase : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {
         other.GetComponent<Rigidbody2D>().velocity =  other.GetComponent<Rigidbody2D>().velocity * velocityDampen;
+
+        //Give the choice for the effect to be nothing!
+        if(effectGameobject != null)
+        {
+            Instantiate(effectGameobject, this.transform.position, Quaternion.identity);
+        }
+
         playPowerUp();
     }
 

@@ -64,6 +64,6 @@ public class BigBallPowerUp : PowerUpBase
     {
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<CircleCollider2D>().enabled = false;
-        playPowerUp();
+        base.OnTriggerEnter2D(other);
     }
 }

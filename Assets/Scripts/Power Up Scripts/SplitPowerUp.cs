@@ -15,6 +15,11 @@ public class SplitPowerUp : PowerUpBase
     
     public override void playPowerUp()
     {
+        StartCoroutine(CountDown(delay));
+    }
+
+    private void playPowerUpAux()
+    {
         GameObject clone = Instantiate(original, transform.position, Quaternion.identity);
         clone.GetComponent<Rigidbody2D>().velocity = other.GetComponent<Rigidbody2D>().velocity;
         other = null;
@@ -23,7 +28,7 @@ public class SplitPowerUp : PowerUpBase
     IEnumerator CountDown(float delay)
     {
         yield return new WaitForSeconds(delay);
-        playPowerUp();
+        playPowerUpAux();
         Destroy(this.gameObject);
     }
 
@@ -32,6 +37,6 @@ public class SplitPowerUp : PowerUpBase
         this.other = other.gameObject;
         this.GetComponent<SpriteRenderer>().enabled = false;
         this.GetComponent<CircleCollider2D>().enabled = false;
-        StartCoroutine(CountDown(delay));
+        base.OnTriggerEnter2D(other);
     }
 }
