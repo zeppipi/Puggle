@@ -12,6 +12,9 @@ public class BallWalls : MonoBehaviour
     [SerializeField]
     private GameObject particles;
 
+    //Play audio
+    private AudioSource bounceAudio;
+
     private Rigidbody2D ballPhysics;
     private bool flipped;
 
@@ -19,6 +22,9 @@ public class BallWalls : MonoBehaviour
     void Start()
     {
         ballPhysics = this.gameObject.GetComponent<Rigidbody2D>();
+
+        //Set the sfx
+        bounceAudio = this.GetComponent<AudioSource>();
     }
     
     //Screw box colliders fr
@@ -30,6 +36,7 @@ public class BallWalls : MonoBehaviour
             {
                 ballPhysics.velocity = new Vector2(-ballPhysics.velocity.x, ballPhysics.velocity.y);
                 Instantiate(particles, this.transform.position, Quaternion.identity);
+                bounceAudio.Play();
 
                 if(this.transform.position.x > area)
                 {

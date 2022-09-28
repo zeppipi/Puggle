@@ -24,6 +24,9 @@ public class BallBehaviour : MonoBehaviour
     //To make a more stable paddle bounce
     private bool hit;
     private bool down;
+
+    //SFX
+    private AudioSource bounceAudio;
     
     //Instiate before anything starts
     void Awake()
@@ -37,19 +40,31 @@ public class BallBehaviour : MonoBehaviour
         //Instantiate the needed variables
         ballHitbox = ball.GetComponent<CircleCollider2D>();
         ballPhysics = ball.GetComponent<Rigidbody2D>();
+
+        //Set the sfx
+        bounceAudio = ball.GetComponent<AudioSource>();
     }
 
-    //Play particles on rigidbodties too
+    //Play particles on rigidbodies too
     void OnCollisionEnter2D(Collision2D other) 
     {
         playParticles();
+        bounceAudio.Play();
     }
     
     //Screw rigid colliders
     void OnTriggerEnter2D(Collider2D other) 
     {
+        //Particles play when ball hits anything
         playParticles();
+
+        //Ball sounds plays on everything but powerups
+        if(other.tag != "PowerUp")
+        {
+            bounceAudio.Play();
+        }
         
+        //Calculations for when the ball hits the player
         if(other.tag == "Player")
         {   
             GameObject otherGameobject = other.gameObject;
