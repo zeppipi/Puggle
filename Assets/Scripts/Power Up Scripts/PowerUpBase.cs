@@ -6,14 +6,21 @@ public abstract class PowerUpBase : MonoBehaviour
 {
     //Create the details of this gameobject
     private CircleCollider2D powerUpHitbox;
+    
     [SerializeField]
     private float powerUpSize = 1f;
+    
     [SerializeField]
     //Dampens the speed of the ball when it hits the powerup
     private float velocityDampen = 1f;
+    
     [SerializeField]
     //The effect that should come out when the powerup is hit, in a form of a gameobject
     private GameObject effectGameobject;
+
+    [SerializeField]
+    //The sound effect of hitting the powerup
+    private AudioSource powerUpSound;
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -27,6 +34,7 @@ public abstract class PowerUpBase : MonoBehaviour
     public virtual void OnTriggerEnter2D(Collider2D other) 
     {
         other.GetComponent<Rigidbody2D>().velocity =  other.GetComponent<Rigidbody2D>().velocity * velocityDampen;
+        powerUpSound.Play();
 
         //Give the choice for the effect to be nothing!
         if(effectGameobject != null)

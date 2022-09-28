@@ -18,6 +18,10 @@ public class startScript : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI startText;
 
+    //Sfx for game starting
+    [SerializeField]
+    private AudioSource startSound;
+
     private bool clickStart;
 
     //Get gamesmanager
@@ -43,6 +47,7 @@ public class startScript : MonoBehaviour
         
         if (Input.GetMouseButton(0) && !clickStart)
         {
+            startSound.Play();
             Instantiate(ballGameobject, ballPos, Quaternion.identity);
             gamesManagerScript.overwriteGameoverSetter(false);
             clickStart = true;

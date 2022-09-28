@@ -39,6 +39,10 @@ public class GamesManager : MonoBehaviour
     //For cases where the gameover needs to be overwrite (true for ignore gameover, false for let gameover happen)
     private bool overwriteGameover;
 
+    //Play audio for when a ball is lost and when game over is reached
+    [SerializeField]
+    private AudioSource ballLostSound;
+
     //Start is called before the first frame update
     void Start()
     {
@@ -81,6 +85,7 @@ public class GamesManager : MonoBehaviour
             {
                 if(lives >= 0)  //Just so the lives doesn't continously get reduced
                 {
+                    ballLostSound.Play();
                     lives -= 1;
                     Debug.Log("Lives: " + lives);
                     lastUpdateBalls = currentBalls;
@@ -94,7 +99,7 @@ public class GamesManager : MonoBehaviour
         }
         
         //Game Over
-        if((lives == 0 || currentBalls == 0))
+        if(lives == 0 || currentBalls == 0)
         {
             if(overwriteGameover == false)
             {
@@ -113,7 +118,7 @@ public class GamesManager : MonoBehaviour
 
     //Script plays all the nessecary things for a game over
     void endPlay()
-    {
+    {   
         //Make time go back to normal
         Time.timeScale = 1;
         
@@ -130,10 +135,10 @@ public class GamesManager : MonoBehaviour
             }
         }
         //Show gameover
-        gameOver.enabled = true;
-        gameOverPanel.SetActive(true);
-        restartButton.SetActive(true);
-        mainMenuButton.SetActive(true);
+        gameOver.enabled = !gamePlaying;
+        gameOverPanel.SetActive(!gamePlaying);
+        restartButton.SetActive(!gamePlaying);
+        mainMenuButton.SetActive(!gamePlaying);
 
         //Make lives show 0
         lives = 0;

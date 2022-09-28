@@ -628,10 +628,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: startGameobject
       objectReference: {fileID: 0}
-    - target: {fileID: 4800038567534869643, guid: b9404315975280648b8d206032582a31, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9404315975280648b8d206032582a31, type: 3}
 --- !u!1001 &5776803627734502913
@@ -644,14 +640,6 @@ PrefabInstance:
     - target: {fileID: 5776803626043175105, guid: d865bce68b27f284b8228025e57971a9, type: 3}
       propertyPath: m_Name
       value: Main Game Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776803626043175105, guid: d865bce68b27f284b8228025e57971a9, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5776803626043175106, guid: d865bce68b27f284b8228025e57971a9, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 5776803626043175109, guid: d865bce68b27f284b8228025e57971a9, type: 3}
       propertyPath: m_Pivot.x
@@ -754,10 +742,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamesManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1656846525710882471, guid: 676046546fb8b6f4ba525b53ddcad3d3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6672027612166118296, guid: 676046546fb8b6f4ba525b53ddcad3d3, type: 3}
       propertyPath: gameOver
       value: 
@@ -822,7 +806,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7231048278283389348, guid: 676046546fb8b6f4ba525b53ddcad3d3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 676046546fb8b6f4ba525b53ddcad3d3, type: 3}
 --- !u!1001 &8774845443402229358
 PrefabInstance:
