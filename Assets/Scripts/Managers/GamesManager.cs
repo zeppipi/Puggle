@@ -33,20 +33,17 @@ public class GamesManager : MonoBehaviour
     [SerializeField]
     private GameObject mainMenuButton;
 
-    //Bool to show if the game has ended or now
+    //Bool to show if the game has ended or not
     private bool gamePlaying;
+    
+    //For cases where the gameover needs to be overwrite (true for ignore gameover, false for let gameover happen)
+    private bool overwriteGameover;
 
     //Start is called before the first frame update
     void Start()
     {
         //Annouce the game is playing
         gamePlaying = true;
-        
-        //Hide game over text and game over buttons
-        gameOver.enabled = false;
-        gameOverPanel.SetActive(false);
-        restartButton.SetActive(false);
-        mainMenuButton.SetActive(false);
         
         //Start the last update
         lastUpdateBalls = 0;
@@ -63,6 +60,12 @@ public class GamesManager : MonoBehaviour
     //Update is called once per frame
     void Update()
     {
+        //Hide game over text and game over buttons
+        gameOver.enabled = !gamePlaying;
+        gameOverPanel.SetActive(!gamePlaying);
+        restartButton.SetActive(!gamePlaying);
+        mainMenuButton.SetActive(!gamePlaying);
+        
         //Display the lives count
         livesText.text = lives + "x";
         
@@ -91,9 +94,19 @@ public class GamesManager : MonoBehaviour
         }
         
         //Game Over
-        if(lives == 0 || currentBalls == 0)
+        if((lives == 0 || currentBalls == 0))
         {
-            Debug.Log("Game Over! Your final score is " + scoreManagerScript.scoreGetter());
+            if(overwriteGameover == false)
+            {
+                Debug.Log("Game Over! Your final score is " + scoreManagerScript.scoreGetter());
+                gamePlaying = false;
+            }
+
+        }
+
+        //Check game over
+        if(!gamePlaying)
+        {
             endPlay();
         }
     }
@@ -101,6 +114,9 @@ public class GamesManager : MonoBehaviour
     //Script plays all the nessecary things for a game over
     void endPlay()
     {
+        //Make time go back to normal
+        Time.timeScale = 1;
+        
         //turn the game palying status to false
         gamePlaying = false;
         
@@ -145,5 +161,11 @@ public class GamesManager : MonoBehaviour
     public bool gamePlayingGetter()
     {
         return gamePlaying;
+    }
+
+    //Let other scripts overwrite the gameover status
+    public void overwriteGameoverSetter(bool res)
+    {
+        this.overwriteGameover = res;
     }
 }

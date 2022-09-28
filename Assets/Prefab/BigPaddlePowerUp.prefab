@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpSize: 1
   velocityDampen: 0.8
+  effectGameobject: {fileID: 6896559044649238684, guid: b07e040408560be42bccff56883fecb9, type: 3}
   extraSize: 1
   time: 3
   powerUpColor: {r: 0.9672187, g: 1, b: 0.6745283, a: 1}
