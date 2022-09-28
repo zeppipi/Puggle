@@ -150,6 +150,18 @@ public class GamesManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    //Script to go to the main menu
+    public void exitLevel()
+    {
+        SceneManager.LoadScene("MainMenuScene");
+    }
+
+    //Script to go to the game
+    public void enterLevel()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
     //Sets out the info of how many lives the player has
     public void liveSetter(int number)
     {

@@ -729,6 +729,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1955289489}
+    - target: {fileID: 5776803627713543013, guid: d865bce68b27f284b8228025e57971a9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1955289489}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d865bce68b27f284b8228025e57971a9, type: 3}
 --- !u!1001 &7089768376748857711
@@ -806,8 +810,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7231048278283389348, guid: 676046546fb8b6f4ba525b53ddcad3d3, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 676046546fb8b6f4ba525b53ddcad3d3, type: 3}
 --- !u!1001 &8774845443402229358
 PrefabInstance:
