@@ -20,7 +20,10 @@ public class ShadowsDelete : MonoBehaviour
         }
 
         //Check if the gameobject has been hidden
-        this.GetComponent<SpriteRenderer>().enabled = oriGameobject.GetComponent<SpriteRenderer>().enabled;
+        if (oriGameobject != null)
+        {
+            this.GetComponent<SpriteRenderer>().enabled = oriGameobject.GetComponent<SpriteRenderer>().enabled;
+        }
     }
 
     //Set what the gameobject should be from another script

@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpSize: 1.5
   velocityDampen: 1
-  effectGameobject: {fileID: 0}
+  effectGameobject: {fileID: 4583789231903021670, guid: 5bd3f2daff650954c8b01da394f5f6bb, type: 3}
   delay: 0.3
   original: {fileID: 4138937774206683209, guid: 2307cc855e01948438d7e94eb1ed3442, type: 3}
 --- !u!114 &2175586565515740554
