@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PaddleSpeed : MonoBehaviour
 {
-    private PaddleFollow paddleFollow;
-
     private Vector2 paddlePosition;
     private Vector2 lastPaddlePosition;
 
@@ -14,22 +12,16 @@ public class PaddleSpeed : MonoBehaviour
     [SerializeField]
     private Vector2 speedExaggeration = new Vector2(1f,1f);
 
-    // Start is called before the first frame update
-    void Awake()
-    {
-        paddleFollow = this.GetComponent<PaddleFollow>();
-    }
-
     void Start()
     {
-        paddlePosition = paddleFollow.getMousePos();
-        lastPaddlePosition = paddleFollow.getMousePos();
+        paddlePosition = this.gameObject.transform.position;
+        lastPaddlePosition = this.gameObject.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        paddlePosition = paddleFollow.getMousePos();
+        paddlePosition = this.gameObject.transform.position;
         
         if(paddlePosition != lastPaddlePosition)
         {

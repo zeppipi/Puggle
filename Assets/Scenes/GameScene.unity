@@ -183,10 +183,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PowerUpSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 8832208760209410094, guid: d7447a45f3698e942a2dd89a6a27aff3, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7447a45f3698e942a2dd89a6a27aff3, type: 3}
 --- !u!114 &337276693 stripped
@@ -441,10 +437,6 @@ PrefabInstance:
     - target: {fileID: 3809727680597537338, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
       propertyPath: m_Name
       value: ScoreManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 3809727680597537338, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1006f97341d15a94a9beede5c1ea2a72, type: 3}
@@ -866,10 +858,6 @@ PrefabInstance:
     - target: {fileID: 8774845443693313814, guid: 0d1413924760bbc439beb31f16cbcc3c, type: 3}
       propertyPath: m_Name
       value: SpecialPowerUpSpawner
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774845443693313814, guid: 0d1413924760bbc439beb31f16cbcc3c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d1413924760bbc439beb31f16cbcc3c, type: 3}

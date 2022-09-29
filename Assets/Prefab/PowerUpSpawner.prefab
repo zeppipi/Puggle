@@ -45,9 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAxisSpawnArea: 6.5
-  yAxisSpawnArea: 6.5
+  yAxisSpawnArea: 6
   xLocationSpawnArea: 0
-  yLocationSpawnArea: 1.7
+  yLocationSpawnArea: 2
   powerUps:
   - {fileID: 1534701913725003098, guid: 69747c29fcf48414cb6b78cd699a1a7d, type: 3}
   - {fileID: 5791081299736510868, guid: 5952f3abddc68c74384a59a8beed00a2, type: 3}

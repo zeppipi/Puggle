@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 2705888264069454281}
   - component: {fileID: 2705888264069454277}
   - component: {fileID: 139606523}
-  - component: {fileID: 2705888264069454279}
-  - component: {fileID: 2705888264069454278}
   - component: {fileID: 139606524}
   - component: {fileID: -6776514149650618285}
+  - component: {fileID: 8428342186829097899}
   - component: {fileID: 1912532776}
   m_Layer: 0
   m_Name: Paddle
@@ -138,38 +137,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &2705888264069454279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2705888264069454282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f744b44341ad00c4aac978dedf7533a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 40
-  x_size: 2
-  y_size: 0.3
---- !u!114 &2705888264069454278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2705888264069454282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09189762a429214419b7bc55f10d397a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xConstraint: 8
-  yConstraint: 3
-  xLocation: 0
-  yLocation: -3.5
-  constraintLine: {fileID: 6936781030001627323, guid: cafd73acf205f2d4f86a2f533d613f86, type: 3}
 --- !u!114 &139606524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f67cc4b66163b4882e726353a080ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedExaggeration: {x: 30, y: 20}
+  speedExaggeration: {x: 50, y: 50}
 --- !u!61 &-6776514149650618285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -209,6 +176,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &8428342186829097899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705888264069454282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cd88ea1730a554eb0e5e0039a92261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  y_constraint: -2
+  constraintLine: {fileID: 6936781030001627323, guid: cafd73acf205f2d4f86a2f533d613f86, type: 3}
+  speed: 40
+  x_size: 2
+  y_size: 0.3
 --- !u!114 &1912532776
 MonoBehaviour:
   m_ObjectHideFlags: 0
