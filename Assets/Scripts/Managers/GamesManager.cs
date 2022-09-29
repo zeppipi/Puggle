@@ -63,7 +63,7 @@ public class GamesManager : MonoBehaviour
     
     //Update is called once per frame
     void Update()
-    {
+    {   
         //Hide game over text and game over buttons
         gameOver.enabled = !gamePlaying;
         gameOverPanel.SetActive(!gamePlaying);
