@@ -143,24 +143,6 @@ public class GamesManager : MonoBehaviour
         //Make lives show 0
         lives = 0;
     }
-    
-    //Script to reset the scene
-    public void resetLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    //Script to go to the main menu
-    public void exitLevel()
-    {
-        SceneManager.LoadScene("MainMenuScene");
-    }
-
-    //Script to go to the game
-    public void enterLevel()
-    {
-        SceneManager.LoadScene("GameScene");
-    }
 
     //Sets out the info of how many lives the player has
     public void liveSetter(int number)

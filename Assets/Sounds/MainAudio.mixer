@@ -1,21 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!244 &-983985321833352184
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 5522a0f92537e1d48920f4fd370a84ac
-  m_EffectName: Lowpass Simple
-  m_MixLevel: dd4b948b5fae6ae4cbdd8ab9ba084b6e
-  m_Parameters:
-  - m_ParameterName: Cutoff freq
-    m_GUID: 9e9f5460061679145bf6a6e8ed5629d1
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
 --- !u!241 &24100000
 AudioMixerController:
   m_ObjectHideFlags: 0
@@ -31,7 +15,9 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: db74d8dc5ffd20e44b92fb445c9199e0
+    name: SFX volume
   m_AudioMixerGroupViews:
   - guids:
     - 294a35c47b40e564a8c35360e44082c4
@@ -53,7 +39,6 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
-  - {fileID: -983985321833352184}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
